@@ -8,15 +8,19 @@ const rotationAnimation = keyframes`
     transform:rotate(0deg);
     border-radius:0px;
   }
-  50%{
+  50% {
     transform:rotate(360deg);
     border-radius:100px;
   }
-  100%{
+  100% {
     transform:rotate(0deg);
     border-radius:0px;
   }
 `;
+const Emoji = styled.span`
+  font-size: 30px;
+`;
+
 const Box = styled.div`
   height: 200px;
   width: 200px;
@@ -25,13 +29,13 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   animation: ${rotationAnimation} 1s linear infinite;
-  span {
-    font-size: 30px;
+  ${Emoji} {
     &:hover {
       font-size: 50px;
     }
   }
 `;
+
 // const Input = styled.input.attrs({ required: true, minLength: 10 })`
 //   background-color: tomato;
 // `;
@@ -40,7 +44,7 @@ const App = () => {
   return (
     <Wrapper>
       <Box>
-        <span>😁</span>
+        <Emoji as="p">😁</Emoji>
       </Box>
     </Wrapper>
   );
