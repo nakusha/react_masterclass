@@ -3,18 +3,18 @@ import styled from "styled-components";
 const Father = styled.div`
   display: flex;
 `;
-const Btn = styled.button`
-  color: white;
+const Input = styled.input.attrs({ required: true, minLength: 10 })`
   background-color: tomato;
-  border: 0;
-  border-radius: 15px;
 `;
 
 const App = () => {
   return (
     <Father>
-      <Btn>Log In</Btn>
-      <Btn as="a">Log In</Btn>
+      <Input />
+      <Input />
+      <Input />
+      <Input />
+      <Input />
     </Father>
   );
 };
