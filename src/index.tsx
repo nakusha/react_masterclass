@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
+import { QueryClient, QueryClientProvider } from "react-query";
 import App from "./App";
-import { darkTheme, lightTheme } from "./theme";
+import { theme } from "./theme";
 
-const light = true;
+const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={light ? lightTheme : darkTheme}>
-      <App />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
