@@ -69,7 +69,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <Router />
-      <ReactQueryDevtools initialIsOpen />
+      <ReactQueryDevtools initialIsOpen={false} />
     </>
   );
 };
